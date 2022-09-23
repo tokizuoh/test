@@ -24,6 +24,12 @@ jobs:
     steps:
       - checkout
       - run: echo "Android"
+  dummy:
+    executor: cimg-base
+    steps:
+      - checkout
+      - run: echo "<< pipeline.parameters.build-ios >>"
+      - run: echo "<< pipeline.parameters.build-android >>" 
 
 workflows:
   ios-workflow:
@@ -34,3 +40,6 @@ workflows:
     when: << pipeline.parameters.build-android >>
     jobs:
       - android-ci
+  dummy:
+    jobs:
+      - dummy
