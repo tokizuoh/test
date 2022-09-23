@@ -27,10 +27,10 @@ jobs:
 
 workflows:
   ios-workflow:
-    when: << pipeline.parameters.build-ios >
+    when: << pipeline.parameters.build-ios >>
     jobs:
       - ios-ci
   android-workflow:
-    when: << pipeline.parameters.build-android >
+    when: << pipeline.parameters.build-android >>
     jobs:
       - android-ci
