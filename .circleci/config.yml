@@ -12,5 +12,5 @@ workflows:
           base-revision: main
           config-path: .circleci/continue-config.yml
           mapping: |
-            android/.* build-android true
             ios/.* build-ios true
+            android/.* build-android true
