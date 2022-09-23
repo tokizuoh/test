@@ -1,16 +1,23 @@
 version: 2.1
 
 jobs:
-  say-hello:
+  ios-ci:
     docker:
       - image: cimg/base:stable
     steps:
       - checkout
-      - run:
-          name: "Say hello"
-          command: echo $GITHUB_PERSONAL_ACCESS_TOKEN
+      - run: echo "iOS"
+  android-ci:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - checkout
+      - run: echo "Android"
 
 workflows:
-  say-hello-workflow:
+  ios-workflow:
     jobs:
-      - say-hello
+      - ios-ci
+  android-workflow:
+    jobs:
+      - android-ci
