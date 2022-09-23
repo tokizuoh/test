@@ -1,18 +1,18 @@
 version: 2.1
 
 executors:
-  cimg/base:
+  cimg-base:
     docker:
       - image: cimg/base:stable
 
 jobs:
   ios-ci:
-    executor: cimg/base
+    executor: cimg-base
     steps:
       - checkout
       - run: echo "iOS"
   android-ci:
-    executor: cimg/base
+    executor: cimg-base
     steps:
       - checkout
       - run: echo "Android"
